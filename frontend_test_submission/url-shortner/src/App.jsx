@@ -26,7 +26,7 @@ function App() {
         <div className="mt-10">
           <UrlList urls={shortUrls} />
         </div>
-
+        
         {error && (
           <div className="fixed bottom-5 left-1/2 transform -translate-x-1/2 w-full max-w-md z-50">
             <div
