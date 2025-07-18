@@ -2,7 +2,7 @@ const { nanoid } = require('nanoid');
 const validUrl = require('valid-url');
 const log = require('./logs');
 
-const urlStore = {}; // { shortcode: { url, expiry, created, clicks: [] } }
+const urlStore = {}; 
 
 function isAlphanumeric(str) {
   return /^[a-zA-Z0-9]+$/.test(str);
