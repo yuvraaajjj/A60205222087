@@ -17,7 +17,6 @@ async function createShortUrl({ url, validity = 30, shortcode }) {
     throw { code: 400, type: 'handler', msg: 'Invalid original URL.' };
   }
 
-  // Shortcode: validate or auto-generate
   let code = shortcode;
   if (shortcode) {
     if (!isAlphanumeric(shortcode) || shortcode.length > 20) {
@@ -32,7 +31,6 @@ async function createShortUrl({ url, validity = 30, shortcode }) {
     } while (urlStore[code]);
   }
 
-  // Save short URL
   const now = new Date();
   const expiryDate = new Date(now.getTime() + validity * 60000);
   urlStore[code] = {
